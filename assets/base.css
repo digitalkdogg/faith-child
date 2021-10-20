@@ -1,0 +1,128 @@
+body {
+    font-family:Raleway !important;
+    font-size: 16px;
+}
+
+button.btn {
+    background: #cf4a46;
+}
+
+button.btn.disabled {
+    background:#999;
+  }
+  
+  button.btn.disabled:hover {
+    background:#999;
+  }
+  
+  button.btn:hover {
+      background: #fc4b46;
+      cursor:pointer;
+  }
+  
+  .bg-white {
+    background-color: white;
+  }
+  
+  .bg-millwood-tan {
+    background-color: #faf7f2;
+  }
+  
+  .text-align-center {
+    text-align:center !important;
+  }
+  
+  .text-align-left {
+    text-align:left !important;
+  }
+  
+  .text-align-right {
+    text-align:right !important;
+  }
+  
+  .float-right {
+    float:right;
+  }
+  
+  .float-left {
+    float:left;
+  }
+  
+  .full-screen-width {
+    margin:auto -15vh;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .full-screen-width {
+      margin:initial;
+    }
+  }
+  
+  .inline-block {
+      display:inline-block;
+  }
+  
+  .padding-20 {
+    padding:20px;
+  }
+  
+  .border-radius-5 {
+    border-radius: 5px;
+  }
+  
+  .z-index-10 {
+      z-index: 10;
+  }
+  
+  .offset-50 {
+    position: relative;
+    top:50px;
+  }
+  
+  .offset-minus-50 {
+    position: relative;
+    top:-50px;
+  }
+  
+  .offset-left-minus-25 {
+    position:relative;
+    left: -25%;
+  }
+  
+  .offset-left-25 {
+    position:relative;
+    left: 25%;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .offset-mobile-left-5 {
+      position:relative;
+      left:5%;
+    }
+  
+    .offset-mobile-left-0 {
+      position:relative;
+      left:0;
+    }
+  }
+  
+  .width-50 {
+    width:50%;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .mobile-width-100 {
+      width:100%;
+    }
+  }
+  .border-1-ccc {
+    border: 1px solid #ccc;
+  }
+  
+  .min-height-200 {
+    min-height: 200px;
+  }
+  
+  .min-height-400 {
+    min-height: 400px;
+  }
