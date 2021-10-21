@@ -10,6 +10,7 @@ Note: this function loads the parent stylesheet before, then child theme stylesh
 
 if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 	function FaithChild_enqueue_child_styles() {
+		$all_settings = get_theme_mods();
 	    // loading parent style
 	    wp_register_style('parente2-style',get_template_directory_uri() . '/style.css');
 
@@ -30,9 +31,14 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
         	'is_admin'              => is_admin(),
         	'rest_url'              => get_rest_url(),
         	'menu'                  => wp_get_nav_menu_items('MainMenu'),
+			'stripe_api_key' 		=>  $all_settings['stripe_test_key_text_block'],
 		); 
 
 		wp_add_inline_script('customjs', 'var php_vars = ' . wp_json_encode($php_vars));
 	 }
 }
 add_action( 'wp_enqueue_scripts', 'FaithChild_enqueue_child_styles' );
+
+//if (get_included_files()[0]) {
+include_once WP_CONTENT_DIR . '/themes/faith-child/inc/customizer.php';
+//}
