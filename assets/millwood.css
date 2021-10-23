@@ -18,6 +18,14 @@ header.site-header {
     filter: opacity(0.9);
 }
 
+.home header.ilovewp-page-front {
+    display: none;
+}
+
+.home #site-main {
+    padding-top: 150px;
+}
+
 div#rev_slider_1_1_wrapper {
     width: 100vw !important;
     left: -34vw;
