@@ -23,6 +23,10 @@ class Millwood {
 
                 millwood.page.current = this.get_current_page();
 
+                if (millwood.page.current == 'home') {
+                    millwood.fn.center_slider();
+                }
+
                 if (millwood.page.current == 'donate-now') {
                     this.stripe();
                 }
@@ -38,6 +42,16 @@ class Millwood {
                     return 'home';
                 } else {
                     return paths[paths.length - 1];
+                }
+
+            },
+            'center_slider': function () {
+                let windowwidth = $(window).width();
+                let wrapperwidth = $('.wrapper-main').css('width')
+
+                if (wrapperwidth > 0 ){
+                    let leftpos = windowwidth - wrapperwidth;
+                    $('#rev_slider_1_1_wrapper').css({'width' : windowwidth + 'px', 'left': parseInt(leftpox +40) + 'px' })
                 }
 
             },

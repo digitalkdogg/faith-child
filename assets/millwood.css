@@ -12,3 +12,32 @@ header.site-header {
         padding-top: 250px;
     }
 }
+
+header.site-header {
+    z-index: 1;
+    filter: opacity(0.9);
+}
+
+div#rev_slider_1_1_wrapper {
+    width: 100vw !important;
+    left: -34vw;
+}
+
+div#rev_slider_1_1_wrapper ul.tp-revslider-mainul {
+    overflow: visible !important;
+}
+
+div#rev_slider_1_1_wrapper .slotholder {
+    width:100% !important;
+}
+
+div#rev_slider_1_1_wrapper .slotholder .tp-bgimg {
+    filter: hue-rotate(45deg) opacity(.9);
+}
+
+@media screen and (max-width:768px) {
+    div#rev_slider_1_1_wrapper .slotholder .tp-bgimg {
+        background-size: auto !important;
+        max-height:550px !important;
+    }
+}
