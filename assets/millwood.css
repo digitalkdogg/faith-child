@@ -26,6 +26,14 @@ header.site-header {
     padding-top: 150px;
 }
 
+.site-footer p.copy {
+    display: none;
+}
+
+.site-footer * {
+    color: white;
+}
+
 div#rev_slider_1_1_wrapper {
     width: 100vw !important;
     left: -34vw;
