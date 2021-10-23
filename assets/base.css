@@ -19,6 +19,14 @@ button.btn.disabled {
       background: #fc4b46;
       cursor:pointer;
   }
+
+  .hide {
+    display:none;
+  }
+
+  .show {
+    display:block;
+  }
   
   .bg-white {
     background-color: white;

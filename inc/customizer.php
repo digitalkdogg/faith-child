@@ -73,6 +73,25 @@ function faith_customize_custom_register( $wp_customize ) {
 		);
 
 
+		 $wp_customize->add_setting( 'use_test_data', array(
+			'default'           => 1,
+			'sanitize_callback' => 'sanitize_checkbox',
+		) );
+
+
+		  $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'use_test_data',
+			   array(
+				   'label'    => __( 'Use Test Data', 'theme_name' ),
+				   'section'  => 'api_support',
+				   'settings' => 'use_test_data',
+				   'description' => esc_html( 'Check this if you are on a local or just want test data to be used', 'faith' ),
+				   'type'     => 'checkbox'
+			   )
+		   )
+	   );
+
 		 // Add setting
 		 $wp_customize->add_setting( 'stripe_test_key_text_block', array(
 			'default'           => __( 'Default text', '' ),
@@ -91,6 +110,8 @@ function faith_customize_custom_register( $wp_customize ) {
 		   )
 	   );
 
+	  
+
 
 
 
@@ -98,8 +119,27 @@ function faith_customize_custom_register( $wp_customize ) {
 
 }
 
+if ( ! function_exists( 'sanitize_checkbox' ) ) :
+/**
+ * Sanitize the checkbox.
+ *
+ * @param  mixed 	$input.
+ * @return boolean	(true|false).
+ */
+function sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+endif;
+
+if (! function_exists( 'sanitize_text' )  ) :
  // Sanitize text
  function sanitize_text( $text ) {
 	return sanitize_text_field( $text );
 }
+endif;
+
 add_action( 'customize_register', 'faith_customize_custom_register' );
