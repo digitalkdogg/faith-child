@@ -34,6 +34,10 @@ header.site-header {
     color: white;
 }
 
+.site-footer .wrapper.wrapper-footer {
+    display: none;
+}
+
 div#rev_slider_1_1_wrapper {
     width: 100vw !important;
     left: -34vw;
