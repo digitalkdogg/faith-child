@@ -31,6 +31,18 @@ class Millwood {
                     millwood.fn.center_slider();
                 }
 
+                millwood.fn.set_header_height();
+
+            },
+            'set_header_height': function () {
+                let header = $('header.site-header');
+                let paddingTop = parseInt($(header).css('padding-top'))
+                let paddingBot = parseInt($(header).css('padding-bottom'))
+
+                let headerheight = $(header).height() + paddingTop + paddingBot;
+
+                $('#site-main').css({'padding-top': headerheight+'px'});
+
             },
             'get_current_page': function () {
                let paths =  millwood.page.location.pathname.split('/')
@@ -65,6 +77,10 @@ class Millwood {
 const millwood = new Millwood();
 $(document).ready(function () {
     millwood.fn.init();
+
+    $(window).resize(function () {
+        millwood.fn.set_header_height()
+    })
 
     setTimeout(function () {
             php_vars = null
