@@ -96,7 +96,7 @@ function get_custom_template_file($fileName){
 	 // Register the rest route here.
   	 add_action( 'rest_api_init', function () {
             register_rest_route('stripe/v1', 'create_intent', array(
-              'methods' => 'POST',
+              'methods' => 'GET',
               'callback' => 'get_stripe_intent'
             ));
      } );
