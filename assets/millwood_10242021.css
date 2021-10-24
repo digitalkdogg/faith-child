@@ -3,6 +3,10 @@ header.site-header {
     width: 100%;
 }
 
+.ilovewp-hero-blankfill {
+    display:none;
+}
+
 #site-main {
     padding-top: 200px;
 }
