@@ -9,21 +9,13 @@ class Give {
   		'init': function () {
   			try {_this.vars['stripe_api_test_key'] = php_vars['stripe_api_test_key']} catch(e) {console.log(e);};
   			try {_this.vars['stripe_api_live_key'] = php_vars['stripe_api_live_key']} catch(e) {console.log(e);};
-  			try {_this.vars['stripe_api_live_kevin'] = php_vars['stripe_api_live_kevin']} catch(e) {console.log(e);}; 			
-  			try {_this.vars['stripe_api_test_kevin'] = php_vars['stripe_api_test_kevin']} catch(e) {console.log(e);};
             try {_this.vars['use_test_data'] = php_vars['use_test_data']} catch(e) {console.log(e);};
             try {_this.vars['templates']['stripe'] = php_vars['templates']['stripe']} catch(e) {console.log(e);};
 
+          
             _this.fn.stripe();
   		},
   		'stripe_utils' : {
-  			'generate_init_data': function () {
-				//this.wrapperele =  millwood.wp_data.custom_super_options.api_stripe_payment_id,
-				//this.stripe_live_key = millwood.wp_data.custom_super_options.api_stripe_payment_live_key,
-				//this.stripe_test_key = millwood.wp_data.custom_super_options.api_stripe_payment_test_key
-				//this.amount = 0;
-				//this.unlockconfirm = false;
-  			},
   			'generate_stripe_data': function () {
 				_this.stripe['ownerInfo'] = {};
 				_this.stripe.ownerInfo['owner'] = {};
@@ -64,7 +56,6 @@ class Give {
 				return true;
 			},
 			'check_goodtogo': function () {
-				console.log(_this.stripe)
 				if (_this.stripe.ownerInfo != undefined) {
 					if(_this.stripe.ownerInfo.owner.name.length <= 0) {
 						_this.stripe.valid=false;
@@ -268,16 +259,12 @@ class Give {
         'stripe': function () {
 	       
             $.getScript( "https://js.stripe.com/v3/", function( data, textStatus, jqxhr ) {
-            		console.log(_this);
 					
-
                     if (_this.vars.use_test_data == true) {
                       _this.stripe = Stripe(_this.vars.stripe_api_test_key);
                     } else {
                        _this.stripe = Stripe(_this.vars.stripe_api_live_key);
                     }
-
-					_this.fn.stripe_utils.generate_init_data();
 
 					_this.stripe.stripeWrapper = $('#stripe-api')
 					$(_this.stripe.stripeWrapper).html(_this.vars.templates.stripe);
@@ -310,7 +297,6 @@ class Give {
 
 
 					$('button#submit').click(function (e) {
-						console.log('i submitted');
 						e.preventDefault();
 
 					})
@@ -326,7 +312,6 @@ class Give {
 
 						}
 						if (event.complete) {
-//								//stripe_utils.get_payment_intents(stripe_utils.amount);
 								$('button#payment').removeClass('disabled');
 								_this.stripe['valid'] = true;
 						}
@@ -338,7 +323,6 @@ class Give {
 						if ($(this).hasClass('disabled')!=true) {
 							_this.fn.stripe_utils.get_payment_intents(_this.stripe.amount);
 							$('#confirm-section button#submit .spinner').addClass('spin');
-//							//stripe_utils.confirm_card_payment();
 						}
 
 					})

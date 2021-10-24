@@ -39,9 +39,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 
 		if (isset($all_settings['stripe_test_key_text_block'])) : $php_vars['stripe_api_test_key'] = $all_settings['stripe_test_key_text_block']; endif;
 		if (isset($all_settings['use_test_data'])) : $php_vars['use_test_data'] = $all_settings['use_test_data']; endif;
-		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_live_secret_text_block']; endif;
-		if (isset($all_settings['stripe_test_secret_text_block'])) : $php_vars['stripe_api_test_kevin'] = $all_settings['stripe_test_secret_text_block']; endif;		
-		if (isset($all_settings['stripe_live_secret_text_block'])) : $php_vars['stripe_api_live_kevin'] = $all_settings['stripe_live_secret_text_block']; endif;
+		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_live_key_text_block']; endif;
 		
 		wp_add_inline_script('customjs', 'var php_vars = ' . wp_json_encode($php_vars));
 
