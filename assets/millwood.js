@@ -43,6 +43,10 @@ class Millwood {
 
                 $('#site-main').css({'padding-top': headerheight+'px'});
 
+                if($('#ilovewp-hero').length > 0) {
+                    $('#ilovewp-hero').remove();
+                }
+
             },
             'get_current_page': function () {
                let paths =  millwood.page.location.pathname.split('/')
