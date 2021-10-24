@@ -22,12 +22,14 @@ header.site-header {
     filter: opacity(0.9);
 }
 
-.home header.ilovewp-page-front {
+.header.ilovewp-page-front {
     display: none;
 }
 
-.home #site-main {
-    padding-top: 150px;
+.page-has-frame .site-content-wrapper {
+    margin-top: 0;
+    margin: 30px 0;
+    min-height: 500px;
 }
 
 .site-footer p.copy {
