@@ -65,4 +65,9 @@ class Millwood {
 const millwood = new Millwood();
 $(document).ready(function () {
     millwood.fn.init();
+
+    setTimeout(function () {
+            php_vars = null
+    },500)
+
 })

@@ -1,4 +1,4 @@
-<form method="post" id="payment-form" >
+<form method="post" id="payment-form" data-next="form-wrapper">
   <div id = "tabwrapper">
       <div class = "tab active text-align-center" id = "amounttab" data-active="amount-section">Amount</div>
       <div class = "tab text-align-center disabled" id = "infotab" data-active = "form-wrapper">Info</div>
@@ -24,6 +24,8 @@
           <div class = "columns small-3"></div>
         </div>
         <br />
+        <hr />
+        <div style = "text-align:center; font-size:2em; font-weight: bold; margin-bottom:20px">OR</div>
         <div class = "form-row row">
           <div class = "columns small-4">Amount (Whole Amount):</div>
           <div class = "columns small-4 custom-amount-cell text-align-center" data-amount = "">
@@ -191,12 +193,13 @@
       </div>
       <div class = "success-wrapper hide min-height-400 text-align-center tab-section" id = "success-wrapper">
         <div id = "success" style="margin:5px 45%; border-radius: 100%;border: 3px solid green;width: 50px;height: 50px;font-size: 2em;text-align: center;color: green;">
-            <div class = "icon-check" />
+            <div class = "icon-check dashicons dashicons-saved" />
           </div>
-          <br /><br />
+          <div id = "success-sub-wrap">
         <p>Thank you for your support in our community</p><br />
         <p>Feel free to leave this page at any time.</p><br />
         <button onClick="window.location.reload();" class = "btn">Make Another Donation</button>
         </div>
+      </div>
 
 </form>

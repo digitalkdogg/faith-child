@@ -119,6 +119,38 @@
   opacity: .7;
 }
 
+div#success-wrapper {
+    overflow: hidden;
+}
+
+div#success-sub-wrap {
+    width: 100%;
+    min-width: 40vw;
+    left: -18vw;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  div#success-sub-wrap {
+      min-width: 55vw;
+      left:-25vw;
+      position: relative;
+  }
+}
+
+.icon-check {
+    font-size: 3em;
+    overflow: hidden;
+    display: contents;
+}
+
+.dashicons-saved:before {
+    content: "\f15e";
+    left: -20px;
+    position: relative;
+    top: -35px;
+}
+
 #stripe-api .double-bounce1, .double-bounce2 {
   width: 100%;
   height: 100%;

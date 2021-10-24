@@ -20,6 +20,9 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 		wp_enqueue_style( 'childe2-style', get_stylesheet_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/base.css' );
 		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood.css' );
+
+		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
+    	wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
 		
 		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', 'before');
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood.js' );
@@ -30,15 +33,18 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 		try {$php_vars['site_url'] = get_option( 'siteurl' ); } catch (exception $e) {}
 		try {$php_vars['is_admin'] = is_admin(); } catch(exception $e) {}
 		try {$php_vars['menu'] = wp_get_nav_menu_items('MainMenu'); } catch(exception $e) {}
-		try {$php_vars['rest_url'] = get_rest_url();} catch(exception $e) {}
+		try {$php_vars['rest_url'] = get_home_url() . '/index.php/wp-json/';} catch(exception $e) {}
 		
 		try { $php_vars['templates']['stripe'] = get_custom_template_file('template-parts/stripe.html'); } catch(exception $e) {}
 
 		if (isset($all_settings['stripe_test_key_text_block'])) : $php_vars['stripe_api_test_key'] = $all_settings['stripe_test_key_text_block']; endif;
 		if (isset($all_settings['use_test_data'])) : $php_vars['use_test_data'] = $all_settings['use_test_data']; endif;
-		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_api_live_key']; endif;
-
+		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_live_secret_text_block']; endif;
+		if (isset($all_settings['stripe_test_secret_text_block'])) : $php_vars['stripe_api_test_kevin'] = $all_settings['stripe_test_secret_text_block']; endif;		
+		if (isset($all_settings['stripe_live_secret_text_block'])) : $php_vars['stripe_api_live_kevin'] = $all_settings['stripe_live_secret_text_block']; endif;
+		
 		wp_add_inline_script('customjs', 'var php_vars = ' . wp_json_encode($php_vars));
+
 	 }
 }
 add_action( 'wp_enqueue_scripts', 'FaithChild_enqueue_child_styles' );
@@ -51,23 +57,27 @@ function get_custom_template_file($fileName){
     return $fileContents;
 }
 
-  /**
+/**
 * Generates new stripe intent
 * @param array $data Options for the function.
 * @return $object, or null if none.  */
 
  function get_stripe_intent ( $params ){
 
-    require_once(get_home_path(). 'stripe-php/init.php');
+ 		$all_settings = get_theme_mods();
 
 
-    if ($params['type']=='live') {
+    require_once($all_settings['base_path'] . '/stripe-php/init.php');
+
+
+    if ($all_settings['use_test_data']==false) {
       $stripe = new \Stripe\StripeClient(
-        pastore_church_get_custom_option('api_stripe_payment_live_secret')
+        $all_settings['stripe_live_secret_text_block']
       );
     } else {
       $stripe = new \Stripe\StripeClient(
-        pastore_church_get_custom_option('api_stripe_payment_test_secret')
+      	$all_settings['stripe_test_secret_text_block']
+      //  'sk_test_4fUI416eCak3UympI9MADNCM00l7QOVnDg'
       );
     }
 
@@ -96,7 +106,7 @@ function get_custom_template_file($fileName){
 	 // Register the rest route here.
   	 add_action( 'rest_api_init', function () {
             register_rest_route('stripe/v1', 'create_intent', array(
-              'methods' => 'GET',
+              'methods' => 'POST',
               'callback' => 'get_stripe_intent'
             ));
      } );

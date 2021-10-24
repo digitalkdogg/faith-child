@@ -72,6 +72,24 @@ function faith_customize_custom_register( $wp_customize ) {
 			)
 		);
 
+		// Add setting
+		$wp_customize->add_setting( 'base_path', array(
+			'default'           => __( 'Default text', '' ),
+			'sanitize_callback' => 'sanitize_text'
+	   ) );
+	   // Add control
+	   $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'base_path',
+			   array(
+				   'label'    => __( 'Base Path', 'theme_name' ),
+				   'section'  => 'api_support',
+				   'settings' => 'base_path',
+				   'type'     => 'text'
+			   )
+		   )
+	   );
+
 
 		 $wp_customize->add_setting( 'use_test_data', array(
 			'default'           => 1,
@@ -92,6 +110,7 @@ function faith_customize_custom_register( $wp_customize ) {
 		   )
 	   );
 
+		
 		 // Add setting
 		 $wp_customize->add_setting( 'stripe_test_key_text_block', array(
 			'default'           => __( 'Default text', '' ),
@@ -110,7 +129,59 @@ function faith_customize_custom_register( $wp_customize ) {
 		   )
 	   );
 
-	  
+	   	 // Add setting
+		 $wp_customize->add_setting( 'stripe_test_secret_text_block', array(
+			'default'           => __( 'Default text', '' ),
+			'sanitize_callback' => 'sanitize_text'
+	   ) );
+	   // Add control
+	   $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'stripe_test_secret_text',
+			   array(
+				   'label'    => __( 'Stripe secret Key', 'theme_name' ),
+				   'section'  => 'api_support',
+				   'settings' => 'stripe_test_secret_text_block',
+				   'type'     => 'text'
+			   )
+		   )
+	   );
+
+	   	 // Add setting
+		 $wp_customize->add_setting( 'stripe_live_key_text_block', array(
+			'default'           => __( 'Default text', '' ),
+			'sanitize_callback' => 'sanitize_text'
+	   ) );
+	   // Add control
+	   $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'stripe_live_key_text',
+			   array(
+				   'label'    => __( 'Stripe Live Key', 'theme_name' ),
+				   'section'  => 'api_support',
+				   'settings' => 'stripe_live_key_text_block',
+				   'type'     => 'text'
+			   )
+		   )
+	   );
+
+	   	 // Add setting
+		 $wp_customize->add_setting( 'stripe_live_secret_text_block', array(
+			'default'           => __( 'Default text', '' ),
+			'sanitize_callback' => 'sanitize_text'
+	   ) );
+	   // Add control
+	   $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'stripe_live_secret_text',
+			   array(
+				   'label'    => __( 'Stripe Live Secret', 'theme_name' ),
+				   'section'  => 'api_support',
+				   'settings' => 'stripe_live_secret_text_block',
+				   'type'     => 'text'
+			   )
+		   )
+	   );
 
 
 
