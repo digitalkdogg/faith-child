@@ -32,21 +32,22 @@ class Millwood {
                 }
 
                 millwood.fn.set_header_height();
+                if (millwood.fn.is_mobile()==true) {
+                    setTimeout(function () {
+                        millwood.fn.set_header_height();
+                    },500);
+                }
 
             },
+            'is_mobile' : function () {return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);},
             'set_header_height': function () {
 
-                console.log('set header');
                 let header = $('header.site-header');
-                console.log(header);
-                console.log($(header).height());
-                console.log($(header).css('padding-top'));
+
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
 
                 let headerheight = $(header).height() + paddingTop + paddingBot;
-                console.log($('#site-main'));
-                console.log(headerheight);
                 
                 $('#site-main').css({'padding-top': headerheight+'px'});
 
@@ -91,11 +92,11 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         millwood.fn.set_header_height()
-    })
-
-
-    $('header').on('change', function () {
-        console.log('changes');
+        if (millwood.fn.is_mobile()==true) {
+            setTimeout(function () {
+                millwood.fn.set_header_height();
+            },500);
+        }
     })
 
     setTimeout(function () {
