@@ -39,6 +39,7 @@ class Millwood {
                 console.log('set header');
                 let header = $('header.site-header');
                 console.log(header);
+                console.log($(header).height());
                 console.log($(header).css('padding-top'));
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
