@@ -39,12 +39,14 @@ class Millwood {
                 console.log('set header');
                 let header = $('header.site-header');
                 console.log(header);
+                console.log($(header).css('padding-top'));
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
 
                 let headerheight = $(header).height() + paddingTop + paddingBot;
-
                 console.log($('#site-main'));
+                console.log(headerheight);
+                
                 $('#site-main').css({'padding-top': headerheight+'px'});
 
                 if($('#ilovewp-hero').length > 0) {
