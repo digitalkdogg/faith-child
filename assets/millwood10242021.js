@@ -35,13 +35,16 @@ class Millwood {
 
             },
             'set_header_height': function () {
+
                 console.log('set header');
                 let header = $('header.site-header');
+                console.log(header);
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
 
                 let headerheight = $(header).height() + paddingTop + paddingBot;
 
+                console.log($('#site-main'));
                 $('#site-main').css({'padding-top': headerheight+'px'});
 
                 if($('#ilovewp-hero').length > 0) {
@@ -85,6 +88,11 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         millwood.fn.set_header_height()
+    })
+
+
+    $('header').on('change', function () {
+        console.log('changes');
     })
 
     setTimeout(function () {
