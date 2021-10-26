@@ -46,6 +46,12 @@ header.site-header {
     min-height: 500px;
 }
 
+.site-footer {
+    position: relative;
+    display: inline-table;
+    width: 100%;
+}
+
 .site-footer p.copy {
     display: none;
 }
@@ -58,6 +64,7 @@ header.site-header {
 .site-footer .wrapper.wrapper-footer {
     display: none;
 }
+
 
 
 @media screen and (min-width:1500px) {
