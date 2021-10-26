@@ -69,7 +69,7 @@ header.site-header {
 
 @media screen and (min-width:1500px) {
     div#rev_slider_1_1_wrapper {
-        left:0 !important;
+        left:0px !important;
     }
 }
 
