@@ -59,7 +59,14 @@ header.site-header {
     display: none;
 }
 
-div#rev_slider_1_1_wrapper {
+
+@media screen and (min-width:1500px) {
+    div#rev_slider_1_1_wrapper {
+        left:0 !important;
+    }
+}
+
+/*div#rev_slider_1_1_wrapper {
     width: 100vw !important;
     left: -34vw;
     background: rgb(248,245,242) !important;
@@ -82,4 +89,4 @@ div#rev_slider_1_1_wrapper .slotholder .tp-bgimg {
     div#rev_slider_1_1_wrapper .slotholder .tp-bgimg {
         background-size: auto !important;
     }
-}
+} */

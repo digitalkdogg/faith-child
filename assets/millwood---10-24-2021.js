@@ -27,8 +27,17 @@ class Millwood {
 
                 millwood.page.current = this.get_current_page();
 
-                if (millwood.page.current == 'home') {
+                if ($('.force-full-width').length > 0 ) {
+                    millwood.fn.force_fullwidth();
+                }
+
+                if ($(window).width() > 1500==true) {
                     millwood.fn.center_slider();
+                }
+
+
+                if (millwood.page.current == 'home') {
+                 //   millwood.fn.center_slider();
                 }
 
                 millwood.fn.set_header_height();
@@ -40,6 +49,13 @@ class Millwood {
 
             },
             'is_mobile' : function () {return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);},
+            'force_fullwidth': function () {
+                let windowwidth = $('body').width();
+                let divleft = $('.force-full-width').position().left
+                $('.force-full-width').each(function () {
+                    $(this).css({'width': windowwidth+'px', 'left': parseInt(-divleft) +'px', 'position': 'relative'})
+                })
+            },
             'set_header_height': function () {
 
                 let header = $('header.site-header');
@@ -69,13 +85,9 @@ class Millwood {
                 }
 
             },
-            'center_slider': function () {
-                let windowwidth = $(window).width();
-                let wrapperwidth = $('.wrapper-main').css('width')
-
-                if (wrapperwidth > 0 ){
-                    let leftpos = windowwidth - wrapperwidth;
-                    $('#rev_slider_1_1_wrapper').css({'width' : windowwidth + 'px', 'left': parseInt(leftpox +40) + 'px' })
+            'center_slider': function () {  
+                if($('#rev_slider_1_1_wrapper').length >0 ) {
+                    $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'});
                 }
 
             },
@@ -96,6 +108,12 @@ $(document).ready(function () {
             setTimeout(function () {
                 millwood.fn.set_header_height();
             },500);
+        }
+        if (millwood.page.current == "home") {
+            millwood.fn.center_slider();
+            if ($('.force-full-width').length > 0 ) {
+                millwood.fn.force_fullwidth();
+            }
         }
     })
 

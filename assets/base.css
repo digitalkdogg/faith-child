@@ -117,6 +117,19 @@ button.btn.disabled {
   .width-50 {
     width:50%;
   }
+
+  .flex {
+        display: flex;
+  }
+
+  .flex.flex-center {
+    justify-content: center;
+  }
+
+  .flex.flex-center.inner-max-width-1500 .wp-block-group__inner-container {
+    max-width: 1500px;
+    width: 100%;
+}
   
   @media only screen and (max-width: 800px) {
     .mobile-width-100 {
