@@ -51,7 +51,7 @@ class Millwood {
             'is_mobile' : function () {return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);},
             'force_fullwidth': function () {
                 let windowwidth = $('body').width();
-                let divleft = $('.force-full-width').position().left
+                let divleft = $('.force-full-width').parent().position().left
                 $('.force-full-width').each(function () {
                     $(this).css({'width': windowwidth+'px', 'left': parseInt(-divleft) +'px', 'position': 'relative'})
                 })
@@ -87,7 +87,16 @@ class Millwood {
             },
             'center_slider': function () {  
                 if($('#rev_slider_1_1_wrapper').length >0 ) {
-                    $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'});
+                    if ($(window).width() > 1500) {
+                        if ($('style#rev-full-width-override').length == 0) {
+                            $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'})
+                            $('#rev_slider_1_1_wrapper').append('<style id = "rev-full-width-override">#rev_slider_1_1_wrapper {left: 0px !important;} </style>')
+                        }
+                    } else {
+                        if ($('style#rev-full-width-override').length > 0) {
+                            $('style#rev-full-width-override').remove()
+                        }
+                    }
                 }
 
             },
