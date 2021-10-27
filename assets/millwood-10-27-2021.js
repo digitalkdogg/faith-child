@@ -4,7 +4,8 @@ class Millwood {
         this.page = {
             'url': location.href,
             'name': document.title,
-            'location':location
+            'location':location,
+            'is_mobile': false
         },
         this.vars = {},
         this.stripe_utils = {
@@ -24,6 +25,9 @@ class Millwood {
                 try {millwood.vars['stylesheet_dir'] = php_vars['stylesheet_dir']} catch(e) {console.log(e);};
                 try {millwood.vars['is_admin'] = php_vars['is_admin']} catch(e) {console.log(e);};
 
+                if (window.innerWidth <= 768 || millwood.fn.is_mobile() == true) {
+                    millwood.page.is_mobile = true;
+                }
 
                 millwood.page.current = this.get_current_page();
 
@@ -33,11 +37,6 @@ class Millwood {
 
                 if ($(window).width() > 1500==true) {
                     millwood.fn.center_slider();
-                }
-
-
-                if (millwood.page.current == 'home') {
-                 //   millwood.fn.center_slider();
                 }
 
                 millwood.fn.set_header_height();
@@ -57,12 +56,26 @@ class Millwood {
                 })
             },
             'set_header_height': function () {
+                if (millwood.page.is_mobile == true) {
+                    setTimeout(function () {
+                        if ($('#site-header-search').length == 1) {
+                            console.log('not yet here');
+                            if ($('.slicknav_nav #site-header-search').length == 0) {
+                                $('#site-header-search').detach().appendTo('.slicknav_nav')
+                            } 
+                        }
+                    },100);
+                } else {
+                    setTimeout(function () {
+                        if($('#menu-main #site-header-search').length == 0) {
+                            $('#site-header-search').detach().prependTo('#menu-menu')
+                        } 
+                    },500)
+                }
 
                 let header = $('header.site-header');
-
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
-
                 let headerheight = $(header).height() + paddingTop + paddingBot;
                 
                 $('#site-main').css({'padding-top': headerheight+'px'});
@@ -114,17 +127,25 @@ $(document).ready(function () {
     millwood.fn.init();
 
     $(window).resize(function () {
-        millwood.fn.set_header_height()
-        if (millwood.fn.is_mobile()==true) {
+     //   millwood.fn.set_header_height()
+        if (millwood.page.is_mobile==true) {
             setTimeout(function () {
                 millwood.fn.set_header_height();
             },500);
+        } else {
+            millwood.fn.set_header_height();
         }
         if (millwood.page.current == "home") {
             millwood.fn.center_slider();
             if ($('.force-full-width').length > 0 ) {
                 millwood.fn.force_fullwidth();
             }
+        }
+
+        if (window.innerWidth <= 768) {
+            millwood.page.is_mobile = true;
+        } else {
+            millwood.page.is_mobile = false;
         }
     })
 

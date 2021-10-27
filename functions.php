@@ -18,14 +18,14 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 	    // loading child style
 
 		wp_enqueue_style( 'childe2-style', get_stylesheet_directory_uri() . '/style.css' );
-		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/base.css' );
-		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood-church.css' );
+		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/basecss.css' );
+		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood-church-10272021.css' );
 
 		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
     	wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
 		
 		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', 'before');
-		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood---10-27-2021.js' );
+		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood-10-27-2021.js' );
 
 		$php_vars = array();
 		try {$php_vars['stylesheet_dir'] = get_stylesheet_directory_uri(); } catch (excetpion $e) {}

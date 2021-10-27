@@ -6,6 +6,12 @@ header.site-header {
     width: 100%;
 }
 
+@media screen and (max-width:768px) {
+    header.site-header .site-description {
+        display:none;
+    }
+}
+
 .ilovewp-hero-blankfill {
     display:none;
 }
@@ -37,6 +43,7 @@ header.site-header {
 header.site-header {
     z-index: 1000;
     filter: opacity(0.9);
+    padding:20px 0;
 }
 
 .header.ilovewp-page-front {
