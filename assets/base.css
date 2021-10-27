@@ -3,7 +3,7 @@ body {
     font-size: 16px;
 }
 
-button.btn {
+button.btn, input.btn {
     background: #cf4a46;
 }
 
@@ -55,7 +55,26 @@ button.btn.disabled {
   .float-left {
     float:left;
   }
-  
+
+  .margin-0 {
+    margin:0 !important;
+  }
+
+  .margin-5 {
+    margin:5px !important;
+  }
+
+  .margin-20 {
+    margin:20px !important;
+  }
+
+  .min-height-300 {
+    min-height:300px;
+  }
+
+ .min-height-300 .wp-block-column {
+    min-height:300px;
+ }
   .full-screen-width {
     margin:auto -15vh;
   }
