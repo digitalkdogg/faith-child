@@ -25,7 +25,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
     	wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
 		
 		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', 'before');
-		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood-10-27-2021.js' );
+		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood--10-27-2021.js' );
 
 		$php_vars = array();
 		try {$php_vars['stylesheet_dir'] = get_stylesheet_directory_uri(); } catch (excetpion $e) {}
@@ -40,7 +40,9 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 		if (isset($all_settings['stripe_test_key_text_block'])) : $php_vars['stripe_api_test_key'] = $all_settings['stripe_test_key_text_block']; endif;
 		if (isset($all_settings['use_test_data'])) : $php_vars['use_test_data'] = $all_settings['use_test_data']; endif;
 		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_live_key_text_block']; endif;
-		
+    if (isset($all_settings['center_slider_1500_offset'])) : $php_vars['center_slider_1500_offset'] = $all_settings['center_slider_1500_offset']; endif;
+
+    
 		wp_add_inline_script('customjs', 'var php_vars = ' . wp_json_encode($php_vars));
 
 	 }

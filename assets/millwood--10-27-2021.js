@@ -24,6 +24,7 @@ class Millwood {
                 try {millwood.vars['site_url'] = php_vars['site_url']} catch(e) {console.log(e);};
                 try {millwood.vars['stylesheet_dir'] = php_vars['stylesheet_dir']} catch(e) {console.log(e);};
                 try {millwood.vars['is_admin'] = php_vars['is_admin']} catch(e) {console.log(e);};
+                try {millwood.vars['center_slider_1500_offset']= php_vars['center_slider_1500_offset']} catch(e) {console.log(e);};
 
                 if (window.innerWidth <= 768 || millwood.fn.is_mobile() == true) {
                     millwood.page.is_mobile = true;
@@ -59,7 +60,6 @@ class Millwood {
                 if (millwood.page.is_mobile == true) {
                     setTimeout(function () {
                         if ($('#site-header-search').length == 1) {
-                            console.log('not yet here');
                             if ($('.slicknav_nav #site-header-search').length == 0) {
                                 $('#site-header-search').detach().appendTo('.slicknav_nav')
                             } 
@@ -103,7 +103,12 @@ class Millwood {
                     if ($('body').width() > 1500) {
                         if ($('style#rev-full-width-override').length == 0) {
                             let windowwidth = $('body').width()
-                            let leftpos = (windowwidth - 1500) / 2
+                            let leftpos = 0;
+                            if (millwood.vars.center_slider_1500_offset != undefined) {
+                                leftpos = millwood.vars.center_slider_1500_offset;
+                                console.log('left pos set');
+                            }
+                            
                             $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'})
                             $('#rev_slider_1_1_wrapper').append('<style id = "rev-full-width-override">#rev_slider_1_1_wrapper {left: ' + leftpos + 'px !important;} </style>')
                         }

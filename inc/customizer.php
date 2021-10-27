@@ -184,6 +184,26 @@ function faith_customize_custom_register( $wp_customize ) {
 	   );
 
 
+	     	 // Add setting
+		 $wp_customize->add_setting( 'center_slider_1500_offset', array(
+			'default'           => __( '0px', '' ),
+			'sanitize_callback' => 'sanitize_text'
+	   ) );
+	   // Add control
+	   $wp_customize->add_control( new WP_Customize_Control(
+		   $wp_customize,
+		   'center_slider_1500',
+			   array(
+				   'label'    => __( 'Center Slider 1500px Offset', 'theme_name' ),
+				   'section'  => 'faith_other_options',
+				   'description' => 'Set the calculation without px to center the slider wrapper (#rev_slider_1_1_wrapper) when used at a screenwidth of 1500px or greater',
+				   'settings' => 'center_slider_1500_offset',
+				   'type'     => 'text'
+			   )
+		   )
+	   );
+
+
 
 
 	return $wp_customize;
