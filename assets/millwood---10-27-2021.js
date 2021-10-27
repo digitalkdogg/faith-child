@@ -87,10 +87,12 @@ class Millwood {
             },
             'center_slider': function () {  
                 if($('#rev_slider_1_1_wrapper').length >0 ) {
-                    if ($(window).width() > 1500) {
+                    if ($('body').width() > 1500) {
                         if ($('style#rev-full-width-override').length == 0) {
+                            let windowwidth = $('body').width()
+                            let leftpos = (windowwidth - 1500) / 2
                             $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'})
-                            $('#rev_slider_1_1_wrapper').append('<style id = "rev-full-width-override">#rev_slider_1_1_wrapper {left: 0px !important;} </style>')
+                            $('#rev_slider_1_1_wrapper').append('<style id = "rev-full-width-override">#rev_slider_1_1_wrapper {left: ' + leftpos + 'px !important;} </style>')
                         }
                     } else {
                         if ($('style#rev-full-width-override').length > 0) {
