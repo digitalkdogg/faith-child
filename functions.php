@@ -19,7 +19,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 
 		wp_enqueue_style( 'childe2-style', get_stylesheet_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/basecss.css' );
-		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood-church-10272021.css' );
+		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood-church-10282021.css' );
 
 		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
     	wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );

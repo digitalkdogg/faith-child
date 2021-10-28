@@ -106,7 +106,6 @@ class Millwood {
                             let leftpos = 0;
                             if (millwood.vars.center_slider_1500_offset != undefined) {
                                 leftpos = millwood.vars.center_slider_1500_offset;
-                                console.log('left pos set');
                             }
                             
                             $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'})
