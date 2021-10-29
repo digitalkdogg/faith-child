@@ -11,11 +11,6 @@ class Millwood {
         this.stripe_utils = {
 
         },
-        this.test =function () {
-            console.log('hi');
-            console.log( php_vars );
-            console.log(this.fn.test());
-        }
         this.fn = {
             'init': function () {
                 try {millwood.vars['home_url'] = php_vars['home_url']} catch(e) {console.log(e);};
