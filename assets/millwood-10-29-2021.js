@@ -35,6 +35,8 @@ class Millwood {
                     millwood.fn.center_slider();
                 }
 
+                millwood.fn.check_menu();
+
                 millwood.fn.set_header_height();
                 if (millwood.fn.is_mobile()==true) {
                     setTimeout(function () {
@@ -93,6 +95,20 @@ class Millwood {
                 }
 
             },
+            'check_menu': function () {
+                //first disable accordion href on desktop
+                $('#site-header-navigation').find('#menu-main').find('li.menu-item-has-children').each(function () {
+                    $(this).children('a').addClass('nogo');
+                })
+
+                //then disable accordion href on mobile
+                $('#menu-main-slick').slicknav({
+                    prependTo:'.navbar-header',
+                    label: faithStrings.slicknav_menu_home,
+                    allowParentLinks: false
+                });
+        
+            },
             'center_slider': function () {  
                 if($('#rev_slider_1_1_wrapper').length >0 ) {
                     if ($('body').width() > 1500) {
@@ -147,6 +163,11 @@ $(document).ready(function () {
             millwood.page.is_mobile = false;
         }
     })
+
+    $('a.nogo').on('click', function (e){
+        e.preventDefault();
+    })
+
 
     setTimeout(function () {
             php_vars = null
