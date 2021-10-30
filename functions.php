@@ -120,23 +120,29 @@ function get_custom_template_file($fileName){
  * @return $object, or null if none.  */
 
 function get_guts_cc ( $params ){
-  global $wpdb;
-  $result = file_get_contents('https://conta.cc/322dqTv');
 
-var_dump($result);
+  $url = 'http://conta.cc/322dqTv';
 
-$handle = @fopen("https://conta.cc/322dqTv", "r");
-if ($handle) {
-    while (!feof($handle)) {
-        $buffer = fgets($handle, 4096);
-        echo $buffer;
-    }
-    fclose($handle);
+  $context = stream_context_create(array(
+    'http' => array(
+        'ignore_errors' => true
+     )
+));
+
+$contents = file_get_contents($url, false, $context);
+
+//return $contents;
+
+if ($contents == false) {
+ // $contents = file_get_contents('/Users/kbollma/Projects/www/wordpress/wp-content/themes/faith-child/template-parts/cc-guts.php');
+
+ // $data = json_decode(file_get_contents('/Users/kbollma/Projects/www/wordpress/wp-content/themes/faith-child/template-parts/cc-guts.php'), true);
+  var_dump(json_encode(wp_remote_post('https://www.example.com')));
 }
-
-var_dump($handle);
-
-  return json_encode($result);
+//return $result;
+//echo htmlentities($result, ENT_NOQUOTES);
+//return $contents;
+//  return json_encode($result);
 
 }   
 

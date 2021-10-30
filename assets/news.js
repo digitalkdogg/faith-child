@@ -57,17 +57,32 @@ class News {
 							$('#modal').find('.body').empty()
 				  			$('#modal').addClass('show');
 				  			$('#modal').find('.title').find('h4').text(title)
+							$('#modal').find('.body').append('<span class="dashicons dashicons-hourglass"></span>');
 				  			$('<iframe />', {
-				  				'id': 'cc-frame',
-				  				'src' : url
+				  				'id': 'cc-frame',			
+								'src' : url
 				  			}).appendTo($('#modal').find('.body'))
 
-				  			$('iframe').load( function() {
-				  				console.log('i loaded')
-				  				console.log($(this).contents().find('head'))
-    							$('iframe').contents().find("head")
-      								.append($("<style type='text/css'>  .jmml-button{display:none;}  </style>"));
-							});
+//				  			$('iframe').load( function() {
+//				  				console.log('i loaded')
+//				  				console.log($(this).contents().find('head'))
+  //  							$('iframe').contents().find("head")
+    //  								.append($("<style type='text/css'>  .jmml-button{display:none;}  </style>"));
+//							});
+
+//                            $.ajax({
+//                                'url': millwood.vars.rest_url + '/cc/v1/guts-cc',
+//                                'type': 'GET',
+//                                'complete': function (data) {
+//                                    console.log('data');
+//                                    console.log(JSON.parse(data.responseText));
+//                                    $('#modal').find('.body').html(data.responseText)
+//                                }
+//                            })
+							$('iframe').load(function () {
+								$('#modal').find('.body').find('.dashicons').remove();
+							})
+
 					    })
 
 

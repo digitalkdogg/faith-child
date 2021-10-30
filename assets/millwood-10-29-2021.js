@@ -142,7 +142,6 @@ $(document).ready(function () {
     millwood.fn.init();
 
     $(window).resize(function () {
-     //   millwood.fn.set_header_height()
         if (millwood.page.is_mobile==true) {
             setTimeout(function () {
                 millwood.fn.set_header_height();
