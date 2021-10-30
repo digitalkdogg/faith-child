@@ -16,13 +16,21 @@ get_header(); ?>
 			<div class="wrapper-frame clearfix">
 			
 				<main id="site-content" class="site-main" role="main">
+					<div id = "test">
+						<?php echo file_get_contents('https://conta.cc/322dqTv'); ?>
+						</div>
 				
 					<?php while ( have_posts() ) : the_post(); ?>
 					
 					<div class="site-content-wrapper clearfix">
 	
-						<?php get_template_part( 'template-parts/content', 'page' ); ?>
-						
+						<div id = "modal">
+							<div class = 'title-wrap'>
+								<div class = "title"><h4></h4><span id = "x">X</span></div>
+							</div>
+							<hr />
+							<div class = "body"></div>
+						<div>
 						
 						
 					</div><!-- .site-content-wrapper .clearfix -->
@@ -37,6 +45,7 @@ get_header(); ?>
 
 	</div><!-- #site-main -->
 	
+	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/news.css" />
 	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/news.js"></script>
 
 <?php get_footer(); ?>

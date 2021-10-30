@@ -102,6 +102,18 @@ function get_custom_template_file($fileName){
 
  }
 
+    /**
+ * Grab latest event posts
+ * @param array $data Options for the function.
+ * @return $object, or null if none.  */
+
+   function get_latest_cc ( $params ){
+     global $wpdb;
+     $result = $wpdb->get_results('SELECT * FROM wp_campaigns where status = "Done" order by created_at desc');
+     return json_encode($result);
+
+   }
+
 
 	 // Register the rest route here.
   	 add_action( 'rest_api_init', function () {
@@ -109,6 +121,14 @@ function get_custom_template_file($fileName){
               'methods' => 'POST',
               'callback' => 'get_stripe_intent'
             ));
+
+
+            register_rest_route('cc/v1', 'latest-cc',array(
+              'methods' => 'GET',
+              'callback' => 'get_latest_cc'
+            ));
+
+
      } );
 
 //if (get_included_files()[0]) {
