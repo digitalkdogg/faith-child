@@ -37,6 +37,17 @@ class Millwood {
 
                 millwood.fn.check_menu();
 
+                if ($('.tan-bg').length>0) {
+                    $.each($('.tan-bg'), function () {
+                        let src = $(this).attr('data-src');
+                        if (src != undefined) {
+                            $(this).attr('style', 'background-image:url('+ src +')');
+                        } else {
+                            $(this).attr('style', 'background-image:url(' + millwood.vars.stylesheet_dir + '/assets/tan-bg.jpg);');
+                        }
+                    })
+                }
+
                 millwood.fn.set_header_height();
                 if (millwood.fn.is_mobile()==true) {
                     setTimeout(function () {

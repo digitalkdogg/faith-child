@@ -104,3 +104,8 @@ header.site-header {
     }
 
 }
+
+.tan-bg {
+    background-size: 150px 150px;
+    filter: saturate(.5) opacity(.9);
+}
