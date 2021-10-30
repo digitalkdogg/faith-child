@@ -38,7 +38,7 @@ class Millwood {
                 millwood.fn.check_menu();
 
                 if ($('.tanbg').length>0) {
-                    $.each($('.tan-bg'), function () {
+                    $.each($('.tanbg'), function () {
                         let src = $(this).attr('data-src');
                         if (src != undefined) {
                             $(this).attr('style', 'background-image:url('+ src +')');
