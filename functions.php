@@ -114,6 +114,32 @@ function get_custom_template_file($fileName){
 
    }
 
+    /**
+ * Grab latest event posts
+ * @param array $data Options for the function.
+ * @return $object, or null if none.  */
+
+function get_guts_cc ( $params ){
+  global $wpdb;
+  $result = file_get_contents('https://conta.cc/322dqTv');
+
+var_dump($result);
+
+$handle = @fopen("https://conta.cc/322dqTv", "r");
+if ($handle) {
+    while (!feof($handle)) {
+        $buffer = fgets($handle, 4096);
+        echo $buffer;
+    }
+    fclose($handle);
+}
+
+var_dump($handle);
+
+  return json_encode($result);
+
+}   
+
 
 	 // Register the rest route here.
   	 add_action( 'rest_api_init', function () {
@@ -126,6 +152,11 @@ function get_custom_template_file($fileName){
             register_rest_route('cc/v1', 'latest-cc',array(
               'methods' => 'GET',
               'callback' => 'get_latest_cc'
+            ));
+
+            register_rest_route('cc/v1', 'guts-cc',array(
+              'methods' => 'GET',
+              'callback' => 'get_guts_cc'
             ));
 
 

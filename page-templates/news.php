@@ -16,7 +16,7 @@ get_header(); ?>
 			<div class="wrapper-frame clearfix">
 			
 				<main id="site-content" class="site-main" role="main">
-					<div id = "test">
+					<div id = "test2">
 						<?php echo file_get_contents('https://conta.cc/322dqTv'); ?>
 						</div>
 				
