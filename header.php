@@ -15,7 +15,7 @@
 <div id="container">
 
 	<a class="skip-link screen-reader-text" href="#site-main"><?php esc_html_e( 'Skip to content', 'faith' ); ?></a>
-	<header class="site-header clearfix" role="banner">
+	<header class="site-header clearfix tan-bg" role="banner" style = "background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/tan-bg.jpg)">
 	
 		<div class="wrapper wrapper-header clearfix">
 
