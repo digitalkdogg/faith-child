@@ -44,7 +44,7 @@ header.site-header {
     z-index: 1000;
     filter: opacity(0.9) saturate(0.5);
     padding: 20px 0;
-    background-size: contain !important;
+    background-size: 150px 150px !important;
 }
 
 header.site-header button.btn {
