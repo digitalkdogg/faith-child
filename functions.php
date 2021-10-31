@@ -110,7 +110,7 @@ function get_custom_template_file($fileName){
    function get_latest_cc ( $params ){
      global $wpdb;
      $result = $wpdb->get_results('SELECT * FROM wp_campaigns where status = "Done" order by created_at desc');
-     return json_encode($result);
+     return $result;
 
    }
 
