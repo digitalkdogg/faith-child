@@ -43,6 +43,6 @@ get_header(); ?>
 	</div><!-- #site-main -->
 	
 	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/news.css" />
-	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/newss.js"></script>
+	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/newpage.js"></script>
 
 <?php get_footer(); ?>
