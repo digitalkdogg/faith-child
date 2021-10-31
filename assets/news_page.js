@@ -8,8 +8,8 @@ class News {
 				'url': millwood.vars.rest_url + 'cc/v1/latest-cc',
 				'type': 'GET',
 				'data': {},
-				'complete': function (data) {
-					data = data.responseJson;
+				'success': function (data) {
+					
 					var wrapper = $('.site-content-wrapper');
 					$('<div />' , {
 						'id': 'cc_wrapper'
@@ -53,22 +53,6 @@ class News {
 								'src' : url
 				  			}).appendTo($('#modal').find('.body'))
 
-//				  			$('iframe').load( function() {
-//				  				console.log('i loaded')
-//				  				console.log($(this).contents().find('head'))
-  //  							$('iframe').contents().find("head")
-    //  								.append($("<style type='text/css'>  .jmml-button{display:none;}  </style>"));
-//							});
-
-//                            $.ajax({
-//                                'url': millwood.vars.rest_url + '/cc/v1/guts-cc',
-//                                'type': 'GET',
-//                                'complete': function (data) {
-//                                    console.log('data');
-//                                    console.log(JSON.parse(data.responseText));
-//                                    $('#modal').find('.body').html(data.responseText)
-//                                }
-//                            })
 							$('iframe').load(function () {
 								$('#modal').find('.body').find('.dashicons').remove();
 							})
