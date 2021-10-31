@@ -87,9 +87,6 @@ $(document).ready(function () {
     console.log('i am the news');
     const news = new News();
     news.fn.init();
-    console.log(news);
-
     
-
     php_vars = null;
 })

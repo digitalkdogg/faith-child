@@ -15,10 +15,10 @@ button.btn.disabled {
     background:#999;
   }
   
-  button.btn:hover {
-      background: #fc4b46;
-      cursor:pointer;
-  }
+button.btn:hover {
+    background: #990400;
+    cursor: pointer;
+}
 
   .hide {
     display:none;

@@ -43,13 +43,16 @@ class Millwood {
                         if (src != undefined) {
                             $(this).attr('style', 'background-image:url('+ src +')');
                         } else {
-                            if ($(this).attr('style').length>1) {
-                                let style = $(this).attr('style');
-                                $(this).attr('style', style + 'background-image:url(' + millwood.vars.stylesheet_dir + '/assets/tan-bg.jpg);');
+                            if ($(this).attr('style') != undefined) {
+                                if ($(this).attr('style').length>1) {
+                                    let style = $(this).attr('style');
+                                    $(this).attr('style', style + 'background-image:url(' + millwood.vars.stylesheet_dir + '/assets/tan-bg.jpg);');
+                                } else {
+                                    $(this).attr('style', 'background-image:url(' + millwood.vars.stylesheet_dir + '/assets/tan-bg.jpg);');
+                                }
                             } else {
                                 $(this).attr('style', 'background-image:url(' + millwood.vars.stylesheet_dir + '/assets/tan-bg.jpg);');
                             }
-                            
                         }
                     })
                 }

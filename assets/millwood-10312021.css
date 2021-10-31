@@ -47,6 +47,10 @@ header.site-header {
     background-size: contain !important;
 }
 
+header.site-header button.btn {
+    filter: contrast(2);
+}
+
 .header.ilovewp-page-front {
     display: none;
 }
@@ -108,6 +112,13 @@ header.site-header {
 .tanbg {
     background-size: 150px 150px;
     filter: saturate(.5) opacity(.9);
+} 
+
+@media screen and (max-width:800px) {
+    .tanbg {
+        background-size: contain;
+        filter: saturate(.5) opacity(.8);
+    } 
 }
 
 .wp-block-group.tanbg button.btn {
