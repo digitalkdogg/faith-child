@@ -25,7 +25,6 @@ get_header(); ?>
 							<div class = 'title-wrap'>
 								<div class = "title"><h4></h4><span id = "x">X</span></div>
 							</div>
-							<hr />
 							<div class = "body"></div>
 						<div>
 						
@@ -42,7 +41,7 @@ get_header(); ?>
 
 	</div><!-- #site-main -->
 	
-	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/news_page.css" />
-	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/new_s_page.js"></script>
+	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/new-s-page.css" />
+	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/new-s-page.js"></script>
 
 <?php get_footer(); ?>

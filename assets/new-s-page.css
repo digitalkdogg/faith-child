@@ -1,0 +1,97 @@
+.flex {
+	justify-content: space-between;
+    align-items: center;
+}
+
+.form-row {
+    background: #f7f3f0;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+#modal {
+	display:none;
+	height: auto;
+    min-height: 550px;
+    width: 80%;
+    background: rgba(240,240,240,0.9);
+    z-index: 1;
+    position: fixed !important;
+    left: 10%;
+    top: 0px;
+    border: 3px solid #333;
+    opacity:0;
+    transition: all .5s;
+    overflow: scroll;
+}
+
+#modal.show {
+	display:block;
+	position:fixed;
+    opacity:1;
+}
+
+#modal span#x {
+    float: right;
+    position: relative;
+    right: 10px;
+    font-size: 3em;
+    font-family: sans-serif;
+    top: -30px;
+    cursor: pointer;
+}
+
+#modal .body {
+    max-height:600px;
+}
+
+#modal .title {
+    text-align: center;
+}
+
+#modal .title-wrap {
+    border-bottom: 2px solid #333;
+    background: white;
+    position: fixed;
+    width: 79%;
+    height: 50px;
+}
+
+#modal .body .imgcenter {
+    display: flex;
+    justify-content: center;
+}
+
+#modal .body {
+    text-align: center;
+    margin: 0 5%;
+}
+
+#modal .body div span {
+    color: black !important;
+}
+
+#modal .body div.content {
+    margin: 10px 0;
+}
+
+@media screen and (max-width:800px) {
+    #modal {
+        width:100%;
+        left:0;
+        background: rgba(240,240,240,0.97);
+    }
+
+    #modal .content {
+        margin: 70px 5% 0;
+    }
+
+    #modal .title-wrap {
+        width:100%;
+    }
+
+    #modal span#x {
+        top:-20px;
+    }
+
+}
