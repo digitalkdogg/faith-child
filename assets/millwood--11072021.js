@@ -124,7 +124,7 @@ class Millwood {
                 //then disable accordion href on mobile
                 $('#menu-main-slick').slicknav({
                     prependTo:'.navbar-header',
-                    label: faithStrings.slicknav_menu_home,
+                    label: 'Navigate',
                     allowParentLinks: false
                 });
         

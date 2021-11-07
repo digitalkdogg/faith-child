@@ -25,7 +25,8 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
     	wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
 		
 		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', 'before');
-		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood--10312021.js' );
+    wp_enqueue_script('slicknav', 'https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js', 'before');
+		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood--11072021.js' );
 
 		$php_vars = array();
 		try {$php_vars['stylesheet_dir'] = get_stylesheet_directory_uri(); } catch (excetpion $e) {}
