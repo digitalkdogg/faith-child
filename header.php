@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="profile" href="//gmpg.org/xfn/11" />
+	<?php wp_head(); ?>
 
-<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -15,47 +16,38 @@
 <div id="container">
 
 	<a class="skip-link screen-reader-text" href="#site-main"><?php esc_html_e( 'Skip to content', 'faith' ); ?></a>
-	<header class="site-header clearfix" role="banner" style = "background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/tan-bg.jpg)">
-		<div class="wrapper wrapper-header clearfix">
+	<header class="site-header" role="banner">
+	
+		<div class="wrapper wrapper-header">
 
-			<div class="site-branding clearfix">
-				<?php
-				if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-					jetpack_the_site_logo();
-				} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+			<div id="site-branding"><?php 
+				if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 					faith_the_custom_logo();
-				} ?>
+				} else { ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-			</div><!-- .site-branding --><!-- ws fix
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p><?php } ?>
+			</div><!-- #site-branding -->
+			<?php if ( has_nav_menu( 'primary' ) ) { ?><div id="site-header-navigation">
+
+				<?php
+					if (has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' )) {
+						get_template_part( 'template-parts/mobile-menu-toggle' );
+						get_template_part( 'template-parts/mobile-menu' );
+					}
+				?>
 	
-	        <?php if ( has_nav_menu( 'primary' ) ) { ?>
-			--><div id="site-header-navigation">
-	
-		        <div class="navbar-header">
-
-					<?php wp_nav_menu( array(
-						'container_id'   => 'menu-main-slick',
-						'menu_id' => 'menu-slide-in',
-						'sort_column' => 'menu_order', 
-						'theme_location' => 'primary'
-					) ); 
-					?>
-		        </div><!-- .navbar-header -->
-
-				
-
-				<nav id="menu-main" role="navigation">
 				<?php if ( is_active_sidebar( 'site-header' ) ) : ?>
-					<div id="site-header-search" class = "show-desktop hide-mobile">
+					<div id="site-header-search">
 						<?php dynamic_sidebar( 'site-header' ); ?>
 					</div><!-- #site-header-search -->
 				<?php endif; ?>
+
+				<nav id="faith-site-menu-main">
 					<?php
 					wp_nav_menu( array(
 						'container' => '', 
 						'container_class' => '', 
-						'menu_class' => 'navbar-nav dropdown sf-menu clearfix', 
+						'menu_class' => 'navbar-nav dropdown sf-menu', 
 						'menu_id' => 'menu-main-menu',
 						'sort_column' => 'menu_order', 
 						'theme_location' => 'primary', 
@@ -67,6 +59,6 @@
 			</div><!-- #site-header-navigation -->
 			<?php } ?>
 			
-		</div><!-- .wrapper .wrapper-header .clearfix -->
+		</div><!-- .wrapper .wrapper-header -->
 
 	</header><!-- .site-header -->

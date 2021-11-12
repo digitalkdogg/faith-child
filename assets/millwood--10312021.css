@@ -97,7 +97,7 @@ header.site-header button.btn {
 @media screen and (max-width:800px) {
     #site-header-navigation a.slicknav_item.slicknav_row {
         text-align: left;
-    }
+    } 
 
     #site-header-navigation li {
         text-align: left;

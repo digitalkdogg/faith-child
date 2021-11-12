@@ -57,6 +57,22 @@ class Millwood {
                     })
                 }
 
+                if (millwood.page.is_mobile == true) {
+                    setTimeout(function () {
+                        if ($('#site-header-search').length == 1) {
+                            if ($('#site-mobile-menu .menu-mainmenu #site-header-search').length == 0) {
+                                $('#site-header-search').detach().appendTo('#site-mobile-menu #menu-mainmenu')
+                            } 
+                        }
+                    },100);
+                } else {
+                    setTimeout(function () {
+                        if($('#menu-main #site-header-search').length == 0) {
+                            $('#site-header-search').detach().prependTo('#menu-menu')
+                        } 
+                    },100)
+                }
+
                 millwood.fn.set_header_height();
                 if (millwood.fn.is_mobile()==true) {
                     setTimeout(function () {
@@ -74,21 +90,7 @@ class Millwood {
                 })
             },
             'set_header_height': function () {
-                if (millwood.page.is_mobile == true) {
-                    setTimeout(function () {
-                        if ($('#site-header-search').length == 1) {
-                            if ($('.slicknav_nav #site-header-search').length == 0) {
-                                $('#site-header-search').detach().appendTo('.slicknav_nav')
-                            } 
-                        }
-                    },100);
-                } else {
-                    setTimeout(function () {
-                        if($('#menu-main #site-header-search').length == 0) {
-                            $('#site-header-search').detach().prependTo('#menu-menu')
-                        } 
-                    },500)
-                }
+             
 
                 let header = $('header.site-header');
                 let paddingTop = parseInt($(header).css('padding-top'))
