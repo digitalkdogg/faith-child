@@ -50,6 +50,11 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'FaithChild_enqueue_child_styles' );
 
+function load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'load_dashicons');
+
 add_action('init', 'get_custom_template_file');
 function get_custom_template_file($fileName){
     $pluginDirectory = plugin_dir_path( __FILE__ );
