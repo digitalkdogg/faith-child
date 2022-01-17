@@ -27,7 +27,37 @@ button.btn:hover {
   .show {
     display:block;
   }
+
+  .wp-block-table table {
+    border-collapse:unset;
+    background:unset;
+    border:none;
+  }
+
+  .wp-block-table table tr {
+    background:unset !important;
+  }
+
+  .post-single table th, .post-single table td {
+    border:none;
+  }
+
+  .post-single table {
+    box-shadow:none;
+  }
+
+  .wp-block-query li {
+    list-style-type: none !important;
+  }
   
+  .font-white {
+    color:white;
+  }
+
+  .font-white a {
+    color:white;
+  }
+
   .bg-white {
     background-color: white;
   }

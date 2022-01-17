@@ -1,3 +1,8 @@
+body.custom-background {
+    background-attachment: fixed !important;
+    background-size:cover !important;
+}
+
 #container {
     overflow:hidden;
 }
