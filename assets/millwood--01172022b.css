@@ -137,3 +137,7 @@ header #site-header-navigation #site-mobile-menu-toggle button {
 .wp-block-group.tanbg button.btn {
     filter: contrast(1.7);
 }
+
+.ignore-left-adjust .wp-block-cover__inner-container {
+    max-width: 900px;
+}
