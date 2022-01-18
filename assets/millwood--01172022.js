@@ -27,6 +27,7 @@ class Millwood {
 
                 millwood.page.current = this.get_current_page();
 
+
                 if ($('.force-full-width').length > 0 ) {
                     millwood.fn.force_fullwidth();
                 }
@@ -85,7 +86,13 @@ class Millwood {
             'force_fullwidth': function () {
                 let windowwidth = $('body').width();
                 let divleft = $('.force-full-width').parent().position().left
+         
                 $('.force-full-width').each(function () {
+                    if ($(this).hasClass('ignore-left-adjust')==true) {
+                     //   if (millwood.fn.is_mobile == true) {
+                            divleft = 0;
+                     //   }
+                    }
                     $(this).css({'width': windowwidth+'px', 'left': parseInt(-divleft) +'px', 'position': 'relative'})
                 })
             },
