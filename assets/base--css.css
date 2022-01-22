@@ -11,6 +11,7 @@ button.btn.disabled {
     background:#999;
   }
   
+  
   button.btn.disabled:hover {
     background:#999;
   }
@@ -18,6 +19,16 @@ button.btn.disabled {
 button.btn:hover {
     background: #990400;
     cursor: pointer;
+}
+
+.ignore-max-width > div {
+    max-width: unset !important;
+}
+
+.max-width-50 {
+    max-width: 50%;
+    text-align: center;
+    margin: 0 25%;
 }
 
   .hide {
