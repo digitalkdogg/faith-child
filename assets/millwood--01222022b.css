@@ -141,3 +141,8 @@ header #site-header-navigation #site-mobile-menu-toggle button {
 .ignore-left-adjust .wp-block-cover__inner-container {
     max-width: 900px;
 }
+
+
+.tiled-gallery__gallery .tiled-gallery__col {
+    max-height: 700px;
+}
