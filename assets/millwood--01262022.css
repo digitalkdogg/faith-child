@@ -3,6 +3,27 @@ body.custom-background {
     background-size:cover !important;
 }
 
+body.page-template-full-width-sub-page header.ilovewp-page-intro {
+    margin: 0 5%;
+}
+
+#site-mobile-menu {
+    padding:0; 
+    margin:0;
+}
+
+#site-mobile-menu .menu li {
+    border-top:0;
+}
+
+#site-mobile-menu.is-visible {
+    background:unset;
+}
+
+body.menu-is-visible header.site-header {
+    filter: opacity(0.99) saturate(0.5);
+}
+
 #container {
     overflow:hidden;
 }

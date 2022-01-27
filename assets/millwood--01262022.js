@@ -27,6 +27,12 @@ class Millwood {
 
                 millwood.page.current = this.get_current_page();
 
+                if ($('.site-title').length > 0) {
+                    let title = $('.site-title').find('a').text().toLowerCase()  
+                    if (title.indexOf('academy')>0) {
+                        //$('.site-description').after('<p></p>')
+                    }
+                }
 
                 if ($('.force-full-width').length > 0 ) {
                     millwood.fn.force_fullwidth();
@@ -136,6 +142,17 @@ class Millwood {
                     label: 'Navigate',
                     allowParentLinks: false
                 });
+
+                $('button.site-toggle-anchor').on('click', function () {
+                    var btn = this
+                    setTimeout(function () {
+                        if ($(btn).hasClass('is-visible')==true) {
+                            $('body').addClass('menu-is-visible')
+                        } else {
+                            $('body').removeClass('menu-is-visible')
+                        }
+                    },100)
+                })
         
             },
             'center_slider': function () {  
@@ -185,11 +202,13 @@ $(document).ready(function () {
             }
         }
 
+
         if (window.innerWidth <= 768) {
             millwood.page.is_mobile = true;
         } else {
             millwood.page.is_mobile = false;
         }
+
     })
 
     $('a.nogo').on('click', function (e){
