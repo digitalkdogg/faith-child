@@ -4,6 +4,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="<?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>" />
 <link rel="profile" href="//gmpg.org/xfn/11" />
 	<?php wp_head(); ?>
 
@@ -17,10 +18,10 @@
 
 	<a class="skip-link screen-reader-text" href="#site-main"><?php esc_html_e( 'Skip to content', 'faith' ); ?></a>
 	<header class="site-header" role="banner">
-	
+
 		<div class="wrapper wrapper-header">
 
-			<div id="site-branding"><?php 
+			<div id="site-branding"><?php
 				if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 					faith_the_custom_logo();
 				} else { ?>
@@ -35,7 +36,7 @@
 						get_template_part( 'template-parts/mobile-menu' );
 					}
 				?>
-	
+
 				<?php if ( is_active_sidebar( 'site-header' ) ) : ?>
 					<div id="site-header-search">
 						<?php dynamic_sidebar( 'site-header' ); ?>
@@ -45,20 +46,20 @@
 				<nav id="faith-site-menu-main">
 					<?php
 					wp_nav_menu( array(
-						'container' => '', 
-						'container_class' => '', 
-						'menu_class' => 'navbar-nav dropdown sf-menu', 
+						'container' => '',
+						'container_class' => '',
+						'menu_class' => 'navbar-nav dropdown sf-menu',
 						'menu_id' => 'menu-main-menu',
-						'sort_column' => 'menu_order', 
-						'theme_location' => 'primary', 
+						'sort_column' => 'menu_order',
+						'theme_location' => 'primary',
 						'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
 						) );
 					?>
 				</nav><!-- #menu-main -->
-			
+
 			</div><!-- #site-header-navigation -->
 			<?php } ?>
-			
+
 		</div><!-- .wrapper .wrapper-header -->
 
 	</header><!-- .site-header -->
