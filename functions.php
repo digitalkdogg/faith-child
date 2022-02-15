@@ -23,19 +23,19 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 
 		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
     wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
-		
+
 		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', 'before');
     wp_enqueue_script('slicknav', 'https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js', 'before');
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood--01262022.js' );
 
 		$php_vars = array();
 		try {$php_vars['stylesheet_dir'] = get_stylesheet_directory_uri(); } catch (excetpion $e) {}
-		try {$php_vars['home_url'] = get_home_url(); } catch (exception $e) {} 
+		try {$php_vars['home_url'] = get_home_url(); } catch (exception $e) {}
 		try {$php_vars['site_url'] = get_option( 'siteurl' ); } catch (exception $e) {}
 		try {$php_vars['is_admin'] = is_admin(); } catch(exception $e) {}
 		try {$php_vars['menu'] = wp_get_nav_menu_items('MainMenu'); } catch(exception $e) {}
 		try {$php_vars['rest_url'] = get_home_url() . '/index.php/wp-json/';} catch(exception $e) {}
-		
+
 		try { $php_vars['templates']['stripe'] = get_custom_template_file('template-parts/stripe.html'); } catch(exception $e) {}
 
 		if (isset($all_settings['stripe_test_key_text_block'])) : $php_vars['stripe_api_test_key'] = $all_settings['stripe_test_key_text_block']; endif;
@@ -43,12 +43,14 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 		if (isset($all_settings['stripe_live_key_text_block'])) : $php_vars['stripe_api_live_key'] = $all_settings['stripe_live_key_text_block']; endif;
     if (isset($all_settings['center_slider_1500_offset'])) : $php_vars['center_slider_1500_offset'] = $all_settings['center_slider_1500_offset']; endif;
 
-    
+
 		wp_add_inline_script('customjs', 'var php_vars = ' . wp_json_encode($php_vars));
 
 	 }
 }
 add_action( 'wp_enqueue_scripts', 'FaithChild_enqueue_child_styles' );
+
+add_post_type_support( 'page', 'excerpt' );
 
 function load_dashicons(){
     wp_enqueue_style('dashicons');
@@ -150,7 +152,7 @@ if ($contents == false) {
 //return $contents;
 //  return json_encode($result);
 
-}   
+}
 
 
 	 // Register the rest route here.
