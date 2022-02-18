@@ -28,7 +28,7 @@ class Millwood {
                 millwood.page.current = this.get_current_page();
 
                 if ($('.site-title').length > 0) {
-                    let title = $('.site-title').find('a').text().toLowerCase()  
+                    let title = $('.site-title').find('a').text().toLowerCase()
                     if (title.indexOf('academy')>0) {
                         //$('.site-description').after('<p></p>')
                     }
@@ -69,14 +69,14 @@ class Millwood {
                         if ($('#site-header-search').length == 1) {
                             if ($('#site-mobile-menu .menu-mainmenu #site-header-search').length == 0) {
                                 $('#site-header-search').detach().appendTo('#site-mobile-menu #menu-mainmenu')
-                            } 
+                            }
                         }
                     },100);
                 } else {
                     setTimeout(function () {
                         if($('#menu-main #site-header-search').length == 0) {
                             $('#site-header-search').detach().prependTo('#menu-menu')
-                        } 
+                        }
                     },100)
                 }
 
@@ -92,7 +92,7 @@ class Millwood {
             'force_fullwidth': function () {
                 let windowwidth = $('body').width();
                 let divleft = $('.force-full-width').parent().position().left
-         
+
                 $('.force-full-width').each(function () {
                     if ($(this).hasClass('ignore-left-adjust')==true) {
                      //   if (millwood.fn.is_mobile == true) {
@@ -103,13 +103,13 @@ class Millwood {
                 })
             },
             'set_header_height': function () {
-             
+
 
                 let header = $('header.site-header');
                 let paddingTop = parseInt($(header).css('padding-top'))
                 let paddingBot = parseInt($(header).css('padding-bottom'))
                 let headerheight = $(header).height() + paddingTop + paddingBot;
-                
+
                 $('#site-main').css({'padding-top': headerheight+'px'});
 
                 if($('#ilovewp-hero').length > 0) {
@@ -153,9 +153,9 @@ class Millwood {
                         }
                     },100)
                 })
-        
+
             },
-            'center_slider': function () {  
+            'center_slider': function () {
                 if($('#rev_slider_1_1_wrapper').length >0 ) {
                     if ($('body').width() > 1500) {
                         if ($('style#rev-full-width-override').length == 0) {
@@ -164,7 +164,7 @@ class Millwood {
                             if (millwood.vars.center_slider_1500_offset != undefined) {
                                 leftpos = millwood.vars.center_slider_1500_offset;
                             }
-                            
+
                             $('#rev_slider_1_1_wrapper').css({'max-width': '1500px'})
                             $('#rev_slider_1_1_wrapper').append('<style id = "rev-full-width-override">#rev_slider_1_1_wrapper {left: ' + leftpos + 'px !important;} </style>')
                         }

@@ -202,6 +202,25 @@ function faith_customize_custom_register( $wp_customize ) {
 		   )
 	   );
 
+		 $wp_customize->add_setting( 'show_donation_btn', array(
+			'default'           => 1,
+			'sanitize_callback' => 'sanitize_checkbox',
+		) );
+
+
+			$wp_customize->add_control( new WP_Customize_Control(
+			 $wp_customize,
+			 'show_donation_btn',
+				 array(
+					 'label'    => __( 'Show Donation Button', 'theme_name' ),
+					 'section'  => 'faith_other_options',
+					 'settings' => 'show_donation_btn',
+					 'description' => esc_html( 'Determines if you see the donation button in the header', 'faith' ),
+					 'type'     => 'checkbox'
+				 )
+			 )
+		 );
+
 
 	     	 // Add setting
 		 $wp_customize->add_setting( 'center_slider_1500_offset', array(

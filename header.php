@@ -43,7 +43,11 @@
 					</div><!-- #site-header-search -->
 				<?php endif; ?>
 
+
 				<nav id="faith-site-menu-main">
+					<?php if (has_show_donate_btn()) { ?>
+						<a href = "/donate-now" aria-label = "Donate Now" title = "Donate Now"><button class="btn">Donate</button></a>
+					<?php } ?>
 					<?php
 					wp_nav_menu( array(
 						'container' => '',

@@ -32,6 +32,10 @@ header.site-header {
     width: 100%;
 }
 
+.site-header a:hover {
+    color: #c81e1e;
+}
+
 @media screen and (max-width:768px) {
     header.site-header .site-description {
         display:none;
@@ -97,6 +101,7 @@ header #site-header-navigation {
 
 header #site-header-navigation #site-mobile-menu-toggle button {
     background:#c81e1e !important;
+    margin:0 30%;
 }
 
 .page-has-frame .site-content-wrapper {

@@ -19,7 +19,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 
 		wp_enqueue_style( 'childe2-style', get_stylesheet_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/base.min.css' );
-		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood--02162022.css' );
+		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood--02172022.css' );
 
 		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
     wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
@@ -53,6 +53,13 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 add_action( 'wp_enqueue_scripts', 'FaithChild_enqueue_child_styles' );
 
 add_post_type_support( 'page', 'excerpt' );
+
+function has_show_donate_btn() {
+		$all_settings = get_theme_mods();
+	 return $all_settings['show_donation_btn'];
+}
+
+
 
 function load_dashicons(){
     wp_enqueue_style('dashicons');
