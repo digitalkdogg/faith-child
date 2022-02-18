@@ -41,20 +41,20 @@ function faith_customize_custom_register( $wp_customize ) {
     );
 
 	$color_scheme = faith_get_color_scheme();
-	
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-		$wp_customize->add_section( 
-			'api_support', 
+		$wp_customize->add_section(
+			'api_support',
 			array(
 				'title' => esc_html__( 'API Settings', 'faith' ),
 				'priority' => 19,
-			) 
+			)
 		);
-		
-		$wp_customize->add_setting( 
-			'faith_support2', 
+
+		$wp_customize->add_setting(
+			'faith_support2',
 			array(
 				'type' => 'theme_mod',
 				'default' => '',
@@ -64,13 +64,31 @@ function faith_customize_custom_register( $wp_customize ) {
 		$wp_customize->add_control(
 			new Faith_Custom_Customize_Control(
 			$wp_customize,
-			'faith_support2', 
+			'faith_support2',
 				array(
 					'section' => 'api_support',
 					'type' => 'text_help',
 				)
 			)
 		);
+
+		// Add setting
+	 $wp_customize->add_setting( 'body_class_name_block', array(
+		'default'           => __( '', '' ),
+		'sanitize_callback' => 'sanitize_text'
+	 ) );
+	 // Add control
+	 $wp_customize->add_control( new WP_Customize_Control(
+		 $wp_customize,
+		 'body_class_name',
+			 array(
+				 'label'    => __( 'body Class Name', 'theme_name' ),
+				 'section'  => 'api_support',
+				 'settings' => 'body_class_name_block',
+				 'type'     => 'text'
+			 )
+		 )
+	 );
 
 		// Add setting
 		$wp_customize->add_setting( 'base_path', array(
@@ -110,7 +128,8 @@ function faith_customize_custom_register( $wp_customize ) {
 		   )
 	   );
 
-		
+
+
 		 // Add setting
 		 $wp_customize->add_setting( 'stripe_test_key_text_block', array(
 			'default'           => __( 'Default text', '' ),

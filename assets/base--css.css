@@ -4,20 +4,20 @@ body {
 }
 
 button.btn, input.btn {
-    background: #cf4a46;
+    background: #c81e1e;
 }
 
 button.btn.disabled {
     background:#999;
   }
-  
-  
+
+
   button.btn.disabled:hover {
     background:#999;
   }
-  
+
 button.btn:hover {
-    background: #990400;
+    background: #ed2323;
     cursor: pointer;
 }
 
@@ -60,7 +60,7 @@ button.btn:hover {
   .wp-block-query li {
     list-style-type: none !important;
   }
-  
+
   .font-white {
     color:white;
   }
@@ -72,27 +72,27 @@ button.btn:hover {
   .bg-white {
     background-color: white;
   }
-  
+
   .bg-millwood-tan {
     background-color: #faf7f2;
   }
-  
+
   .text-align-center {
     text-align:center !important;
   }
-  
+
   .text-align-left {
     text-align:left !important;
   }
-  
+
   .text-align-right {
     text-align:right !important;
   }
-  
+
   .float-right {
     float:right;
   }
-  
+
   .float-left {
     float:left;
   }
@@ -109,6 +109,85 @@ button.btn:hover {
     margin:20px !important;
   }
 
+  .margin-top-20 {
+	margin-top:20px !important;
+}
+
+
+.margin-left-10 {
+    transform: translateX(20px);
+}
+
+.margin-top-40 {
+	margin-top:40px !important;
+}
+
+.margin-top-30 {
+	margin-top:30px !important;
+}
+
+.margin-top-20 {
+	margin-top:20px !important;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.border-1 {
+    border: 2px solid #999 !important;
+}
+
+.post-single table {
+	margin:0;
+}
+
+@media only screen and (min-width: 800px) {
+  .margin-left-5 {
+      margin-left: 5px;
+  }
+
+  .margin-right-5 {
+      margin-right: 5px;
+  }
+}
+
+  @media only screen and (min-width: 800px) {
+	.margin-left-right-1-per {
+		margin-left:1%;
+		margin-right:1%;
+	}
+
+}
+
+@media only screen and (min-width: 800px) {
+	.margin-left-right-15-per {
+		margin-left:15% !important;
+		margin-right:15% !important;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.margin-left-right-20-per {
+		margin-left:20% !important;
+		margin-right:20% !important;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.margin-left-right-35-per {
+		margin-left:35%;
+		margin-right:35%;
+	}
+}
+
+
+  @media only screen and (min-width: 800px) {
+    .margin-left-right-20-per {
+      margin-left:20%;
+      margin-right:20%;
+    }
+  }
   .min-height-300 {
     min-height:300px;
   }
@@ -119,61 +198,61 @@ button.btn:hover {
   .full-screen-width {
     margin:auto -15vh;
   }
-  
+
   @media only screen and (max-width: 800px) {
     .full-screen-width {
       margin:initial;
     }
   }
-  
+
   .inline-block {
       display:inline-block;
   }
-  
+
   .padding-20 {
     padding:20px;
   }
-  
+
   .border-radius-5 {
     border-radius: 5px;
   }
-  
+
   .z-index-10 {
       z-index: 10;
   }
-  
+
   .offset-50 {
     position: relative;
     top:50px;
   }
-  
+
   .offset-minus-50 {
     position: relative;
     top:-50px;
   }
-  
+
   .offset-left-minus-25 {
     position:relative;
     left: -25%;
   }
-  
+
   .offset-left-25 {
     position:relative;
     left: 25%;
   }
-  
+
   @media only screen and (max-width: 800px) {
     .offset-mobile-left-5 {
       position:relative;
       left:5%;
     }
-  
+
     .offset-mobile-left-0 {
       position:relative;
       left:0;
     }
   }
-  
+
   .width-50 {
     width:50%;
   }
@@ -190,7 +269,7 @@ button.btn:hover {
     max-width: 1500px;
     width: 100%;
 }
-  
+
   @media only screen and (max-width: 800px) {
     .mobile-width-100 {
       width:100%;
@@ -199,11 +278,11 @@ button.btn:hover {
   .border-1-ccc {
     border: 1px solid #ccc;
   }
-  
+
   .min-height-200 {
     min-height: 200px;
   }
-  
+
   .min-height-400 {
     min-height: 400px;
   }

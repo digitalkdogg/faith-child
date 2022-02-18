@@ -1,0 +1,103 @@
+body.academy .wp-block-cover, .wp-block-cover-image.ignore-width {
+    width: unset;
+}
+
+body.academy .rgba-white-85 {
+	    background: rgba(255,255,255,0.85) !important;
+}
+
+body.academy div.price div.wp-block-button a {
+    background: #7b8e72 !important;
+	  font-size:18px;
+}
+
+body.academy .border-1 .flex {
+    font-size: 18px;
+}
+
+body.academy.page-template-full-width-sub-page header.ilovewp-page-intro  {
+	display:none;
+}
+
+body.academy.page-template-full-width-sub-page .page-has-frame .site-content-wrapper {
+	margin:0;
+}
+
+body.academy figure.staff-photos img {
+   max-width: 324px !important;
+	max-height:400px !important;
+}
+
+body.academy figure.align-center {
+	padding:0 25%;
+}
+
+body.academy figure.align-center figcaption {
+    width: 50% !important;
+    margin: 0 25%;
+}
+
+body.academy .photos-cover img {
+    max-height: 800px;
+}
+
+body.academy .no-cursor-pointer a:hover {
+    cursor: auto;
+	  text-decoration:none;
+}
+
+body.academy .no-cursor-pointer a {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 800px) {
+body.academy figure.teacher-photo img {
+    height: 60% !important;
+    width: 60% !important;
+	    margin-left: 20%;
+}
+
+body.academy figure.teacher-photo figcaption {
+    width: 60% !important;
+    margin-left: 20%;
+}
+}
+
+body.academy .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+		background: rgba(0,0,0,0.8);
+    bottom: 0;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 800px) {
+body.academy .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+    bottom: -2em;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+	font-weight:bold;
+}
+}
+
+@media only screen and (min-width: 1000px) {
+body.academy .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	background: rgba(0,0,0,.7);
+	bottom:1.0em;
+	padding:0;
+	font-size: 20px;
+	font-weight:bold;
+}
+}
+
+@media only screen and (min-width: 1024) {
+figure.tuition table {
+    margin: 0 25% !important;
+    width: 60% !important;
+}
+}
+
+.border-bottom-1 {
+    border-bottom: 1px solid #ccc;
+}
