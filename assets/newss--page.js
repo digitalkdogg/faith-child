@@ -60,7 +60,7 @@ class News {
 
 
 							let headerheight = $('header.site-header').height()
-							$('#modal').css({'top': (headerheight + 50)+'px'}).delay(200)
+							$('#modal').css({'top': (headerheight + 70)+'px'}).delay(200)
 
 							var parser = new DOMParser();
 
