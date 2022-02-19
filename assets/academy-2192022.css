@@ -15,10 +15,6 @@ body.academy .border-1 .flex {
     font-size: 18px;
 }
 
-body.academy.page-template-full-width-sub-page header.ilovewp-page-intro  {
-	display:none;
-}
-
 body.academy.page-template-full-width-sub-page .page-has-frame .site-content-wrapper {
 	margin:0;
 }
@@ -41,13 +37,38 @@ body.academy .photos-cover img {
     max-height: 800px;
 }
 
-body.academy .no-cursor-pointer a:hover {
-    cursor: auto;
-	  text-decoration:none;
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+		background: rgba(0,0,0,0.8);
+    bottom: 0;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-body.academy .no-cursor-pointer a {
-    text-decoration: none;
+/*could transfer to base */
+@media only screen and (min-width: 800px) {
+.wp-block-cover, .wp-block-cover-image.ignore-width {
+    width: unset;
+}
+
+@media only screen and (min-width: 800px) {
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+    bottom: -2em;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+	font-weight:bold;
+}
+}
+
+@media only screen and (min-width: 1100px) {
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	background: rgba(0,0,0,.7);
+	bottom:1.0em;
+	padding:0;
+	font-size: 20px;
+	font-weight:bold;
+}
 }
 
 @media only screen and (min-width: 800px) {
@@ -100,4 +121,14 @@ figure.tuition table {
 
 .border-bottom-1 {
     border-bottom: 1px solid #ccc;
+}
+
+
+figure.align-center {
+	padding:0 25%;
+}
+
+figure.align-center figcaption {
+    width: 50% !important;
+    margin: 0 25%;
 }

@@ -19,7 +19,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 
 		wp_enqueue_style( 'childe2-style', get_stylesheet_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'millwood-base', get_stylesheet_directory_uri() . '/assets/base.min.css' );
-		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood--02172022.css' );
+		wp_enqueue_style( 'millwood-style', get_stylesheet_directory_uri() . '/assets/millwood--02192022.css' );
 
 		wp_enqueue_style( 'foundationcss', get_stylesheet_directory_uri() . '/assets/foundation/css/foundation.min.css' );
     wp_enqueue_script( 'foundationjs', get_stylesheet_directory_uri() . '/assets/foundation/js/vendor/foundation.min.js' );
@@ -28,7 +28,7 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
     wp_enqueue_script('slicknav', 'https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js', 'before');
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/assets/millwood--01262022.js' );
 
-		if ($all_settings['body_class_name_block'] == 'academy') : 	wp_enqueue_style( 'academycss', get_stylesheet_directory_uri() . '/assets/academy.css' ); endif;
+		if ($all_settings['body_class_name_block'] == 'academy') : 	wp_enqueue_style( 'academycss', get_stylesheet_directory_uri() . '/assets/academy-02192022.css' ); endif;
 
 		$php_vars = array();
 		try {$php_vars['stylesheet_dir'] = get_stylesheet_directory_uri(); } catch (excetpion $e) {}

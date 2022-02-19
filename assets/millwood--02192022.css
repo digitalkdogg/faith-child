@@ -80,9 +80,20 @@ header.site-header {
     }
 }
 
+
+#site-mobile-menu-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+#site-mobile-menu-toggle {
+    display: block;
+}
+}
+
 header.site-header {
     z-index: 1000;
-    filter: opacity(0.9) saturate(0.5);
+    filter: opacity(0.98) saturate(0.7);
     padding: 20px 0;
     background-size: 150px 150px !important;
 }

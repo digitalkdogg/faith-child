@@ -130,6 +130,10 @@ button.btn:hover {
 	margin-top:20px !important;
 }
 
+.padding-5 {
+    padding: 5px;
+}
+
 .flex.space-between {
     justify-content: space-between;
 }
@@ -140,6 +144,16 @@ button.btn:hover {
 
 .post-single table {
 	margin:0;
+}
+
+body.page-template-full-width-sub-page .page-has-frame .site-content-wrapper {
+	margin:0;
+}
+
+@media only screen and (max-width: 800px) {
+.left-adjust-mobile {
+  left:-25px !important;
+}
 }
 
 @media only screen and (min-width: 800px) {
