@@ -134,6 +134,10 @@ button.btn:hover {
     padding: 5px;
 }
 
+.flex {
+  display:flex;
+}
+
 .flex.space-between {
     justify-content: space-between;
 }
