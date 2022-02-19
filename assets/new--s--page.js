@@ -12,7 +12,8 @@ class News {
 					_this.vars.data = data;
 					var wrapper = $('.site-content-wrapper');
 					$('<div />' , {
-						'id': 'cc_wrapper'
+						'id': 'cc_wrapper',
+            'class':'margin-left-right-20-per'
 					}).prependTo(wrapper);
 
 					$.each(data, function (index, val) {
