@@ -13,7 +13,8 @@ class News {
 					var wrapper = $('.site-content-wrapper');
 					$('<div />' , {
 						'id': 'cc_wrapper',
-            'class':'margin-left-right-20-per'
+            'class':'margin-left-right-20-per',
+            'style': 'margin-top:150px;'
 					}).prependTo(wrapper);
 
 					$.each(data, function (index, val) {
