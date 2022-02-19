@@ -31,7 +31,7 @@ get_header(); ?>
 
 	</div><!-- #site-main -->
 
-	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/new-s-page.css" />
+	<link rel = "stylesheet" href ="<?php echo get_stylesheet_directory_uri();?>/assets/new--s-page.css" />
 	<script src = "<?php echo get_stylesheet_directory_uri();?>/assets/new--s--page.js"></script>
 
 <?php get_footer(); ?>
