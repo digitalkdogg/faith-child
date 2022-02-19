@@ -130,6 +130,11 @@ button.btn:hover {
 	margin-top:20px !important;
 }
 
+.margin-top-100 {
+	margin-top:100px !important;
+}
+
+
 .padding-5 {
     padding: 5px;
 }
