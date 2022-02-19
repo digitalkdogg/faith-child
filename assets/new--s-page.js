@@ -13,7 +13,7 @@ class News {
 					var wrapper = $('.site-content-wrapper');
 					$('<div />' , {
 						'id': 'cc_wrapper'
-					}).appendTo(wrapper);
+					}).prependTo(wrapper);
 
 					$.each(data, function (index, val) {
 						var row = this;
@@ -56,10 +56,10 @@ class News {
 				  			$('#modal').addClass('show');
 				  			$('#modal').find('.title').find('h4').text(title)
 
-							
+
 							let headerheight = $('header.site-header').height()
 							$('#modal').css({'top': (headerheight + 50)+'px'}).delay(200)
-							
+
 							var parser = new DOMParser();
 
 							row.content = parser.parseFromString(_this.vars.data[dataindex], 'text/html');
@@ -97,27 +97,27 @@ class News {
 													content = content + '<a href = "https://www.facebook.com/millwoodchurch" target="_blank"><img src = "' + $(this).parent().find('img').attr('src') +'" /></a><br /><br />'
 												}
 											}
-											
+
 										})
 									} else {
 										if ($(htmlcontent[x]).attr('alt') != 'basicImage') {
 											content = '<div class = "imgcenter">' + $(htmlcontent[x]).parent().html() + '</div>';
 										}
-										
+
 									}
 								} else {
 									if ($(htmlcontent[x]).html().indexOf('Millwood Messenger')<0) {
 										content = '<div class = "content">' + $(htmlcontent[x]).html() + '</div>';
 									}
-									
+
 								}
-								
+
 								content = content.replace(/ï»¿/g, '');
 								content = content.replace(/â€/g, '"');
 								$('#modal').find('.body').append(content);
 							}
 
-						
+
 
 					    })
 
@@ -148,6 +148,6 @@ class News {
 $(document).ready(function () {
     const news = new News();
     news.fn.init();
-    
+
     php_vars = null;
 })
