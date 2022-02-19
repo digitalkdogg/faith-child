@@ -255,6 +255,11 @@ body.page-template-full-width-sub-page .page-has-frame .site-content-wrapper {
     left: 25%;
   }
 
+  @media only screen and (min-width: 800px) {
+  .wp-block-cover, .wp-block-cover-image.ignore-width {
+      width: unset;
+  }
+
   @media only screen and (max-width: 800px) {
     .offset-mobile-left-5 {
       position:relative;
